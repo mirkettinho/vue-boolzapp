@@ -11,6 +11,7 @@ body{
   #009688 13%,
   #d9dbd4 13%
   );
+  font-family: 'Open Sans', sans-serif;
 }
 
 .container{
@@ -26,6 +27,9 @@ body{
   display: flex;
 }
 
+.justify-content-end{
+  justify-content: flex-end;
+}
 /* STRUCTURE */
 
 #structure{
@@ -39,4 +43,70 @@ body{
 .right{
   width: 70%;
   background-color: green;
+}
+
+img{
+  width: 40px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+/* USER ACCOUNT */
+.user-account{
+  background-color: #eaeaea;
+  
+}
+
+/* PUSH NOTIFICATIONS */
+.push-notifications{
+  background-color: #8edafc;
+}
+
+.push-notifications i{
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 50%;
+  color: #8edafc;
+  background-color: #f2fbff;
+}
+
+.push-notifications span{
+  font-size: 10px;
+  color: #6093a4;
+  text-decoration: underline;
+}
+
+.push-notifications .text-off-notifications{
+  display: inline-block;
+}
+
+/* SEARCH BAR */
+.search-bar{
+  background-color: #fafafa;
+  padding: 5px;
+}
+
+.search-bar button,
+.search-bar input{
+  padding: 5px 20px;
+  border: none;
+  background-color: #ffffff;
+}
+
+.search-bar button i{
+  font-size: 14px;
+}
+
+.search-bar button{
+  float: left;
+  margin-right: 1px;
+}
+.search-bar input{
+  font-size: 11px;
+  width: 83%;
+}
+
+/* CHAT USERS */
+.chat-users{
+  height: 600px;
 }
