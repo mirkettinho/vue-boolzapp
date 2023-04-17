@@ -11,13 +11,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <!-- VUE -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <title>Boolzapp</title>
 </head>
 
 <!-- BODY -->
-<body>
+<body id="app">
 
   <div class="container">
 
@@ -40,6 +42,8 @@
             </div>
           </div>
         </div>
+
+
         <!-- PUSH NOTIFICATIONS -->
         <div class="push-notifications">
           <i class="fa-solid fa-bell-slash"></i>
@@ -48,14 +52,27 @@
             <span>Attiva notifiche desktop</span>
           </div>
         </div>
+
+
         <!-- SEARCH BAR -->
         <div class="search-bar">
           <button><i class="fa-solid fa-magnifying-glass"></i></button>
           <input type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
+
+
         <!-- CHAT USERS -->
         <div class="chat-users">
-          
+          <div class="d-flex">
+            <img src="assets/img/avatar_io.jpg" alt="avatar-user-account">
+            <span>Sofia</span>
+
+            <div class="button-user-account justify-content-end">
+              <i class="fa-solid fa-circle-notch"></i>
+              <i class="fa-solid fa-message"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -65,16 +82,49 @@
       <div class="right">
         <!-- LAST CHAT -->
         <div class="last-chat">
+          <div class="d-flex">
+            <img src="assets/img/avatar_io.jpg" alt="avatar-user-account">
+            <span>Sofia</span>
 
+            <div class="button-user-account justify-content-end">
+              <i class="fa-solid fa-circle-notch"></i>
+              <i class="fa-solid fa-message"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
         </div>
+
+
         <!-- CHAT -->
-        <div class="chat">
-
+        <div class="chat"> 
+          <div class="container-chat">
+          <!-- MY MESSAGES RIGHT        -->
+            <div class="my-messages">
+              <span class="my-messages-sent">My messages</span>
+            </div>
+            <!-- USER MESSAGES -->
+            <div class="user-messages">
+              <span class="user-messages-sent">User messages</span>
+            </div>
+          </div>
         </div>
+
+
         <!-- WRITING BAR -->
-        <div class="writing-bar">
-
-        </div>
+        <div class="writing-bar ">
+          
+            <div class="button-user-account justify-content-space-between d-flex">
+              <div class="d-flex">
+                <i class="fa-regular fa-face-smile"></i>
+              </div>
+              <div>
+                <input type="text" placeholder="Scrivi un messaggio">
+              </div>
+              <div>
+              <i class="fa-solid fa-microphone"></i>
+              </div>
+          </div>
+        
       </div>
     
     </section>
