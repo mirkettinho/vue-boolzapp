@@ -16,6 +16,7 @@ body{
 
 .container{
   width: 70%;
+  min-height: 700px;
   height: 20px;
   background-color: red;
   margin: auto;
@@ -34,6 +35,14 @@ body{
 .justify-content-space-between{
   justify-content: space-between;
 }
+
+.align-items{
+  align-items: center;
+}
+
+.flex-direction{
+  flex-direction: column;
+}
 /* STRUCTURE */
 
 #structure{
@@ -42,7 +51,7 @@ body{
 }
 .left{
   width: 30%;
-  background-color: yellow;
+  background-color: #ffffff;
 }
 
 .right{
@@ -60,12 +69,29 @@ img{
 /* USER ACCOUNT */
 .user-account{
   background-color: #eaeaea;
-  
+}
+
+.user-image-name span{
+  vertical-align: 100%;
+  font-size: 0.7rem;
+}
+
+.user-image-name :first-child{
+  margin: 5px 0px 5px 5px;
+}
+
+.button-user-account i{
+  padding: 5px;
+  color: #b1b1b1;
+}
+.button-user-account :last-child{
+  padding-right: 18px;
 }
 
 /* PUSH NOTIFICATIONS */
 .push-notifications{
   background-color: #8edafc;
+  padding: 10px;
 }
 
 .push-notifications i{
@@ -80,10 +106,12 @@ img{
   font-size: 10px;
   color: #6093a4;
   text-decoration: underline;
+  vertical-align: top;
 }
 
 .push-notifications .text-off-notifications{
   display: inline-block;
+  padding-left: 10px;
 }
 
 /* SEARCH BAR */
@@ -115,8 +143,36 @@ img{
 /* CHAT USERS */
 .chat-users{
   height: 600px;
+  overflow-y: scroll;
 }
 
+.card-user{
+  background-color: #ffffff;
+  padding: 5px 10px;
+  margin-bottom: 1px;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.image-card img{
+  width: 50px;
+}
+
+.name-card{
+  padding-left: 20px;
+}
+.grey{
+  color: #bbc1cf;
+  font-size: 0.7rem;
+}
+.time span{
+  color: #6b7376;
+  font-size: 0.5rem;
+}
+
+.card-user:hover{
+  background-color: #e9ebeb;
+  cursor: pointer;
+}
 /* RIGHT */
 /* LAST CHAT */
 
@@ -137,7 +193,7 @@ img{
 
 .right .chat{
   background-image: url(/milestone-1/assets/img/mine.jpg);height: 650px;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 .right .chat .my-messages{
   text-align: right;

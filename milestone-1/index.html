@@ -30,12 +30,13 @@
       <div class="left">
 
         <!-- USER ACCOUNT -->
-        <div class="user-account d-flex ">
-          <div class="d-flex">
-            <img src="assets/img/avatar_io.jpg" alt="avatar-user-account">
-            <span>Sofia</span>
-
-            <div class="button-user-account justify-content-end">
+        <div class="user-account">
+          <div class="d-flex justify-content-space-between  align-items">
+            <div class="user-image-name">
+              <img src="assets/img/avatar_io.jpg" alt="avatar-user-account">
+              <span>Sofia</span>
+            </div>
+            <div class="button-user-account">
               <i class="fa-solid fa-circle-notch"></i>
               <i class="fa-solid fa-message"></i>
               <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -45,7 +46,7 @@
 
 
         <!-- PUSH NOTIFICATIONS -->
-        <div class="push-notifications">
+        <div class="push-notifications d-flex ">
           <i class="fa-solid fa-bell-slash"></i>
           <div class="text-off-notifications">
             <h6>Ricevi notifiche di nuovi messaggi</h6>
@@ -63,16 +64,21 @@
 
         <!-- CHAT USERS -->
         <div class="chat-users">
-          <div class="d-flex">
-            <img src="assets/img/avatar_io.jpg" alt="avatar-user-account">
-            <span>Sofia</span>
+          
+          <div v-for="contact in contacts" class="card-user d-flex justify-content-space-between">
+            <div class="image-card d-flex ">
+              <img :src="contact.avatar" alt="avatar-user-account">
+              <div class="name-card d-flex flex-direction">
+                <span>{{contact.name}}</span>
+                <span class="grey">Ultimo messaggio inviato</span>
+              </div>   
+            </div>
 
-            <div class="button-user-account justify-content-end">
-              <i class="fa-solid fa-circle-notch"></i>
-              <i class="fa-solid fa-message"></i>
-              <i class="fa-solid fa-ellipsis-vertical"></i>
+            <div class="time">
+              <span>12:00</span>
             </div>
           </div>
+
         </div>
 
       </div>
@@ -82,13 +88,14 @@
       <div class="right">
         <!-- LAST CHAT -->
         <div class="last-chat">
-          <div class="d-flex">
-            <img src="assets/img/avatar_io.jpg" alt="avatar-user-account">
-            <span>Sofia</span>
-
-            <div class="button-user-account justify-content-end">
-              <i class="fa-solid fa-circle-notch"></i>
-              <i class="fa-solid fa-message"></i>
+          <div class="d-flex justify-content-space-between  align-items">
+            <div class="user-image-name">
+              <img src="assets/img/avatar_io.jpg" alt="avatar-user-account">
+              <span>Sofia</span>
+            </div>
+            <div class="button-user-account">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-paperclip"></i>
               <i class="fa-solid fa-ellipsis-vertical"></i>
             </div>
           </div>
