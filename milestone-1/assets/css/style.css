@@ -18,7 +18,7 @@ body{
   width: 70%;
   min-height: 700px;
   height: 20px;
-  background-color: red;
+  /* background-color: red; */
   margin: auto;
 }
 
@@ -47,7 +47,7 @@ body{
 
 #structure{
   margin-top: 20px;
-  gap: 1px;
+  
 }
 .left{
   width: 30%;
@@ -56,7 +56,7 @@ body{
 
 .right{
   width: 70%;
-  background-color: green;
+  background-image: url(../img/mine.jpg);
 }
 
 img{
@@ -178,6 +178,7 @@ img{
 
 .right .last-chat{
   background-color: #eaeaea;
+  margin-left: 1px;
 }
 
 
@@ -219,6 +220,7 @@ img{
 /* WRITING BAR */
 .writing-bar{
   background-color: #f3eeea;
+  margin-left: 1px;
 }
 
 .writing-bar .button-user-account{
