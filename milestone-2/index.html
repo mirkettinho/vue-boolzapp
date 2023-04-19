@@ -105,34 +105,41 @@
         <!-- CHAT -->
         <div class="chat"> 
           <div class="container-chat">
-          <!-- MY MESSAGES RIGHT        -->
-            <div class="my-messages" v-for="text in contacts[activeUser].messages">
-              <span class="my-messages-sent">{{text.message}}</span>
-            </div>
-            <!-- USER MESSAGES -->
-            <div class="user-messages">
-              <span class="user-messages-sent">User messages</span>
+          <!--  MESSAGE        -->
+            <div class="d-flex" v-for="text in contacts[activeUser].messages" :class="text.status === 'sent' ? 'justify-content-end' : ''">
+              
+              <!-- BOX MESSAGE -->
+              <div class="box-messages" :class="{'my-messages-sent': text.status === 'sent', 'user-messages-sent': text.status === 'received'}">
+                {{text.message}}
+                <!-- TIME MESSAGE -->
+                <div class="time-message">
+                  ciao
+                </div>
+              </div>
+
+            </div>            
             </div>
           </div>
+          <div class="writing-bar ">
+            
+              <div class="button-user-account justify-content-space-between d-flex">
+                <div class="d-flex">
+                  <i class="fa-regular fa-face-smile"></i>
+                </div>
+                <div>
+                  <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage">
+                </div>
+                <div>
+                <i class="fa-solid fa-microphone"></i>
+                </div>
+            </div>
+          
+        </div>
+
         </div>
 
 
         <!-- WRITING BAR -->
-        <div class="writing-bar ">
-          
-            <div class="button-user-account justify-content-space-between d-flex">
-              <div class="d-flex">
-                <i class="fa-regular fa-face-smile"></i>
-              </div>
-              <div>
-                <input type="text" placeholder="Scrivi un messaggio">
-              </div>
-              <div>
-              <i class="fa-solid fa-microphone"></i>
-              </div>
-          </div>
-        
-      </div>
     
     </section>
 

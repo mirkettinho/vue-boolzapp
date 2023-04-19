@@ -184,34 +184,39 @@ img{
 
 
 /* CHAT */
+.right .chat{
+  background-image: url(/milestone-1/assets/img/mine.jpg);
+  height: 650px;
+  overflow-y: scroll;
+}
+
 .container-chat{
-  background-color: rgba(255, 0, 0, 0);
   margin: 40px auto;
   width: 85%;
 }
 
 
-.right .chat{
-  background-image: url(/milestone-1/assets/img/mine.jpg);height: 650px;
-  overflow-y: scroll;
-}
-.right .chat .my-messages{
-  text-align: right;
+.box-messages{
+  padding: 10px 100px 10px 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  position: relative;
 }
 
-.right .chat .my-messages .my-messages-sent{
+.time-message{
+  position: absolute;
+  bottom: 0px;
+  font-size: 0.5rem;
+  right: 3px;
+  color: #b9bec1;
+}
+
+.my-messages-sent{
   background-color: #d5f9ba;
-  padding: 10px 100px 10px 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
 }
 
-.right .chat .user-messages .user-messages-sent{
+.user-messages-sent{
   background-color: #ffffff;
-  padding: 10px 100px 10px 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-
 }
 
 
