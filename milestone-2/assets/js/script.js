@@ -194,10 +194,23 @@ createApp({
        
     },
 
+    // MESSAGGIO USER
+    newMessageUser(){
+        const newUserMessage = {
+            message: "ok",
+            status: "received"
+        };
+        this.contacts[this.activeUser].messages.push(newUserMessage)
+    },
+
     // INVIO
     sendMessage(){
         if (this.newMessage.length > 0){
             this.newEnterMessage();
+
+            setTimeout(() =>{
+                this.newMessageUser();
+            }, 1000);
         }
     }
   }
