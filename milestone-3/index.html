@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- FONTAWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- FONT GOOGLE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <!-- VUE -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Boolzapp</title>
+</head>
+
+<!-- BODY -->
+<body id="app">
+
+  <div class="container">
+
+    <!-- STRUCTURE -->
+    <section id="structure" class="d-flex">
+
+      <!-- LEFT -->
+      <div class="left">
+
+        <!-- USER ACCOUNT -->
+        <div class="user-account">
+          <div class="d-flex justify-content-space-between  align-items">
+            <div class="user-image-name">
+              <img src="assets/img/avatar_io.jpg" alt="avatar-user-account">
+              <span>Sofia</span>
+            </div>
+            <div class="button-user-account">
+              <i class="fa-solid fa-circle-notch"></i>
+              <i class="fa-solid fa-message"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- PUSH NOTIFICATIONS -->
+        <div class="push-notifications d-flex ">
+          <i class="fa-solid fa-bell-slash"></i>
+          <div class="text-off-notifications">
+            <h6>Ricevi notifiche di nuovi messaggi</h6>
+            <span>Attiva notifiche desktop</span>
+          </div>
+        </div>
+
+
+        <!-- SEARCH BAR -->
+        <div class="search-bar">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <input type="text" placeholder="Cerca o inizia una nuova chat">
+        </div>
+
+
+        <!-- CHAT USERS -->
+        <div class="chat-users">
+          
+          <div v-for="(contact,index) in contacts" @click="clickUser(index)" class="card-user d-flex justify-content-space-between">
+            <div class="image-card d-flex ">
+              <img :src="contact.avatar" :alt="contact.name">
+              <div class="name-card d-flex flex-direction">
+                <span>{{contact.name}}</span>
+                <span class="grey">Ultimo messaggio inviato</span>
+              </div>   
+            </div>
+
+            <div class="time">
+              <span>12:00</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT       -->
+      <div class="right">
+        <!-- LAST CHAT -->
+        <div class="last-chat">
+          <div class="d-flex justify-content-space-between  align-items">
+            <div class="user-image-name">
+              <img :src="contacts[activeUser].avatar" :alt="contacts[activeUser].name">
+              <span>{{contacts[activeUser].name}}</span>
+            </div>
+            <div class="button-user-account">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-paperclip"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- CHAT -->
+        <div class="chat"> 
+          <div class="container-chat">
+          <!--  MESSAGE        -->
+            <div class="d-flex" v-for="text in contacts[activeUser].messages" :class="text.status === 'sent' ? 'justify-content-end' : ''">
+              
+              <!-- BOX MESSAGE -->
+              <div class="box-messages" :class="{'my-messages-sent': text.status === 'sent', 'user-messages-sent': text.status === 'received'}">
+                {{text.message}}
+                <!-- TIME MESSAGE -->
+                <div class="time-message">
+                  ciao
+                </div>
+              </div>
+
+            </div>            
+            </div>
+          </div>
+          <div class="writing-bar ">
+            
+              <div class="button-user-account justify-content-space-between d-flex">
+                <div class="d-flex">
+                  <i class="fa-regular fa-face-smile"></i>
+                </div>
+                <div>
+                  <input type="text" placeholder="Scrivi un messaggio" v-model.trim="newMessage" @keyup.enter="sendMessage">
+                </div>
+                <div>
+                <i class="fa-solid fa-microphone"></i>
+                </div>
+            </div>
+          
+        </div>
+
+        </div>
+
+
+        <!-- WRITING BAR -->
+    
+    </section>
+
+  </div>
+  
+
+
+
+<!-- SCRIPT -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
