@@ -181,7 +181,24 @@ createApp({
   methods:{
     clickUser(index){
         this.activeUser = index;
+    },
 
+    // MESSAGGIO SCRITTO DA ME
+    newEnterMessage(){
+        const newMessage = {
+            message: this.newMessage,
+            status: 'sent'
+        };
+        this.contacts[this.activeUser].messages.push(newMessage);
+        this.newMessage = "";
+       
+    },
+
+    // INVIO
+    sendMessage(){
+        if (this.newMessage.length > 0){
+            this.newEnterMessage();
+        }
     }
   }
 }).mount("#app")
